@@ -13,5 +13,6 @@ public class Main {
 
         Task000 task = new Task000(matrix);
         task.computer();
+        task.out();
     }
 }

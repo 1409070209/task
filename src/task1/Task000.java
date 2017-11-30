@@ -22,14 +22,12 @@ public class Task000 {
                 sum += solve[j]*matrix[i][matrix[i].length-2-j];
             }
             matrix[i][matrix[i].length-1] -= sum;
-            matrix[i][matrix[i].length-1] /= matrix[i][matrix[i].length-2-len+1];
+            matrix[i][matrix[i].length-1] /= matrix[i][matrix[i].length-2-len];
             solve[len++] = matrix[i][matrix[i].length-1];
         }
-        this.out();
         return this.matrix;
     }
-    List<Integer> computer(){
-        List<Integer> solve = new ArrayList<>();
+    double[][] computer(){
         for (int i = 0; i < this.matrix.length-1; i++) {
             for (int j = i+1;j < this.matrix.length;j++){
                 if (this.matrix[i][i] == 0.0 ) {
@@ -42,9 +40,9 @@ public class Task000 {
             }
         }
         computerAfter();
-        return solve;
+        return this.matrix;
     }
-    private void out(){
+    void out(){
         for (double[] item : matrix) {
             for (double item1 : item) {
                 System.out.print(item1 + " ");
